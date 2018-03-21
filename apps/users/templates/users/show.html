@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show SemiRESTful User</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'css/users/users.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <h1>User: {{ user.id }}</h1>
+    <p>Full Name: {{ user.name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Created At: {{ user.created_at }}</p>
+    <p class="options"><a href="{%url 'uedit' id=user.id %}" class="options">Edit</a> | <a href="{%url 'udestroy' id=user.id %}" class="options">Delete</a></p>
+    <p><a href="/" class="options">Go Back</a></p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>New SemiRESTful User</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'css/users/users.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <h1>Add a new user</h1>
+    <form action='/create' method='POST'>
+        {% csrf_token %}
+        <label for="name">Name:<input type="text" name="name" id="name"></label>
+        <label for="email">Email:<input type="text" name="email" id="email"></label>
+        <input type="submit" value="Create">
+    </form>
+    <p><a href="/" class="options">Go Back</a></p>
+</body>
+</html>

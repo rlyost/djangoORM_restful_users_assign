@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit SemiRESTful Users</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'css/users/users.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <h1>Edit User {{ user.id }}</h1>
+    <form action='/update' method='POST'>
+        {% csrf_token %}
+        <label for="name">Name:<input type="text" name="name" id="name" value="{{ user.name }}"></label>
+        <label for="email">Email:<input type="text" name="email" id="email" value="{{ user.email }}"></label>
+        <label for="id"><input type="hidden" name="id" id="id" value="{{ user.id }}"></label>
+        <input type="submit" value="Update">
+    </form>
+    <p><a href="{%url 'ushow' id=user.id %}" class="options">Show</a> | <a href="/" class="options">Go Back</a></p>
+</body>
+</html>
